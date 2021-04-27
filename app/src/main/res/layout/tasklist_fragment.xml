@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bckground1"
+    android:layout_below="@+id/appBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_gradation"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/topLinear"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/linearmenu1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+            <Button
+            android:id="@+id/btn_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/styles_background_unselected"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:text="all"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearmenu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    <Button
+            android:id="@+id/btn_shortdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/styles_background_unselected"
+            android:padding="5dp"
+            android:text="Short Data"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearmenu3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="7dp"
+        android:orientation="vertical">
+
+    <Button
+            android:id="@+id/btn_fulldata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/styles_background_unselected"
+            android:text="Full data"/>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearmenu4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_approval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="@drawable/styles_background_unselected"
+                android:text="Full data"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/topLinear"
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Notification"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/taskListRecycleAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

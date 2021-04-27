@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titlePpk"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/titleSubmitDana"
+        android:typeface="sans"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/noPPKLinear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/titleSubmitDana"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No PPK"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-thin"
+            android:typeface="sans"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:layout_marginTop="3dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-thin"
+            android:typeface="sans"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:visibility="gone"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:id="@+id/etPPK"
+            android:layout_below="@+id/titleSubmitDana"
+            android:layout_toRightOf="@+id/currency1"
+            android:typeface="sans"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edt_rounded_gray"
+            android:maxLines="1"
+            android:layout_weight="0.6"/>
+
+        <Spinner
+            android:id="@+id/spinnerPPK"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/titleSubmitDana"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="0.1"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="#353535"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="Lihat"
+            android:background="@drawable/styles_background"
+            android:textColor="@color/white"
+            android:layout_below="@+id/titleSubmitDana"
+            android:layout_toRightOf="@+id/etDana"
+            android:typeface="sans"
+            android:textAllCaps="false"
+            android:layout_weight="0.1"
+            android:id="@+id/buttonLihat"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/listRental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutaddppk"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="120dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:text="@string/linkLihatRequest"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        android:typeface="sans" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/noPPKLinear"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/layoutaddppk"
+        >
+
+
+        <TextView
+            android:id="@+id/textRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="center"
+            android:text="@string/linkTambahPPK"
+            android:textColor="#0000FF"
+            android:textSize="18sp"
+            android:textStyle="italic|bold"
+            android:typeface="sans"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

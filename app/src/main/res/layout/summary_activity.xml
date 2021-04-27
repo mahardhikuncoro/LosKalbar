@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarSummary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/tabTitle">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/titleSummaryKredit"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarSummary">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tipeKredit"
+            android:text="Tipe Kredit"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/tipeKredit"
+            android:id="@+id/tvTipeKredit"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tipeProduk"
+            android:layout_below="@+id/tipeKredit"
+            android:text="Tipe Produk"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tipeProduk"
+            android:layout_below="@+id/tvTipeKredit"
+            android:id="@+id/tvTipeProduk"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/pokokHutang"
+            android:text="Pokok Hutang"
+            android:layout_below="@+id/tipeProduk"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/pokokHutang"
+            android:layout_below="@+id/tvTipeProduk"
+            android:id="@+id/tvPokokHutang"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tenorPilihan"
+            android:text="Tenor (Bulan)"
+            android:layout_below="@+id/pokokHutang"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tenorPilihan"
+            android:layout_below="@+id/tvPokokHutang"
+            android:id="@+id/tvTenorPilihan"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/angsuranPerBulan"
+            android:text="Angsuran"
+            android:layout_below="@+id/tenorPilihan"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/angsuranPerBulan"
+            android:layout_below="@+id/tvTenorPilihan"
+            android:id="@+id/tvAngsuranPerBulan"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tdp"
+            android:visibility="gone"
+            android:text="Pembayaran Pertama"
+            android:layout_below="@+id/angsuranPerBulan"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"
+            />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tdp"
+            android:layout_below="@+id/tvAngsuranPerBulan"
+            android:id="@+id/tvTdp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/pencairan"
+            android:visibility="gone"
+            android:text="Pencairan"
+            android:layout_below="@+id/tdp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:typeface="sans"
+            />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/pencairan"
+            android:layout_below="@+id/tvTdp"
+            android:id="@+id/tvPencairan"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:typeface="sans"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPencairan"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="12sp"
+            android:text="*Hasil Perhitungan merupakan simulasi (belum termasuk biaya lain-lain) dan dapat berubah sewaktu-waktu tanpa pemberitahuan"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:id="@+id/noteSummary1"
+            android:layout_centerHorizontal="true"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noteSummary1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:id="@+id/noteSummary"
+            android:layout_centerHorizontal="true"/>
+
+
+        <Button
+            android:id="@+id/buttonLanjutSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_button_red"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Ajukan"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
