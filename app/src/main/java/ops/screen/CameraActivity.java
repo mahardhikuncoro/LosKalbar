@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
@@ -99,7 +100,14 @@ public class CameraActivity extends BaseDialogActivity {
             takePictureButton.setEnabled(false);
             ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 0);
         }
-        takePicture();
+        takePhoto();
+
+        takePictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePhoto();
+            }
+        });
     }
 
     @Override
@@ -112,7 +120,7 @@ public class CameraActivity extends BaseDialogActivity {
         }
     }
 
-    public void takePicture() {
+    public void takePhoto() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         file = Uri.fromFile(getOutputMediaFile());
         intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
@@ -246,13 +254,13 @@ public class CameraActivity extends BaseDialogActivity {
         }
     }
 
-    public void takePicture(View view) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        f = getOutputMediaFile();
-        file = Uri.fromFile(f);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
-        startActivityForResult(intent, 100);
-    }
+//    public void takePicture(View view) {
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        f = getOutputMediaFile();
+//        file = Uri.fromFile(f);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
+//        startActivityForResult(intent, 100);
+//    }
 
 
     public void uploadImage(View view) {
@@ -317,15 +325,7 @@ public class CameraActivity extends BaseDialogActivity {
                                 userdata.updatelinkProfile(link, userdata.select().getUserid());
                             } else {
                                 if (response.body().getStatus().equalsIgnoreCase("1")) {
-                                    Intent intent = new Intent(CameraActivity.this, FullEntryList.class);
-                                    intent.putExtra("SECTION_NAME", getIntent().getStringExtra("SECTION_NAME"));
-                                    intent.putExtra("REGNO", getIntent().getStringExtra("REGNO"));
-                                    intent.putExtra("TC", getIntent().getStringExtra("TC"));
-                                    intent.putExtra("TYPE", getIntent().getStringExtra("TYPE"));
-                                    intent.putExtra("TABLE_NAME", getIntent().getStringExtra("TABLE_NAME"));
-                                    intent.putExtra("FORM_NAME", getIntent().getStringExtra("FORM_NAME"));
-                                    intent.putExtra("IMAGEID", getIntent().getStringExtra("IMAGEID"));
-                                    startActivity(intent);
+                                    popUpMessage(response.body().getMessage());
                                 } else {
                                     dialogMessage(response.body().getMessage());
                                 }
@@ -350,6 +350,33 @@ public class CameraActivity extends BaseDialogActivity {
                 }
             });
         }
+    }
+
+    protected void popUpMessage(String rString) {
+        MaterialDialog dialog = new MaterialDialog.Builder(this)
+                .title(rString)
+                .icon(getResources().getDrawable(R.mipmap.ic_launcher))
+                .positiveText(R.string.buttonClose)
+                .positiveColor(getResources().getColor(R.color.black))
+                .callback(new MaterialDialog.ButtonCallback() {
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        Intent intent = new Intent(CameraActivity.this, FullEntryList.class);
+                        intent.putExtra("SECTION_NAME", getIntent().getStringExtra("SECTION_NAME"));
+                        intent.putExtra("REGNO", getIntent().getStringExtra("REGNO"));
+                        intent.putExtra("TC", getIntent().getStringExtra("TC"));
+                        intent.putExtra("TYPE", getIntent().getStringExtra("TYPE"));
+                        intent.putExtra("TABLE_NAME", getIntent().getStringExtra("TABLE_NAME"));
+                        intent.putExtra("FORM_NAME", getIntent().getStringExtra("FORM_NAME"));
+                        intent.putExtra("IMAGEID", getIntent().getStringExtra("IMAGEID"));
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                })
+                .cancelable(false)
+                .build();
+
+        dialog.show();
     }
 
 }
